@@ -12,9 +12,9 @@ public class Main {
         Logger logger = new Logger(network);
         NNObj[] trainingSet = createSymbolList_EXAMPLE();
         NNObj[] testSymbols = createTestSymbols();
-        network.trainingCount = 100;
+        network.trainingCount = 1000;
         network.desiredError = 0.1;
-        network.setupNetwork(25, 2, trainingSet, testSymbols, true);
+        network.setupNetwork(10, 2, trainingSet, testSymbols, true);
 
         logger.closeWriter();
         logger.showNetwork();
@@ -53,7 +53,20 @@ public class Main {
                 1, 1, 1, 1, 1
         };
 
-        Symbol[] symbols = new Symbol[]{new Symbol(plusIntoVals, new int[]{0, 0, 1}, "PLUS"), new Symbol(xIntoVals, new int[]{0, 1, 0}, "X"), new Symbol(oIntoVals, new int[]{1, 0, 0}, "O")};
+        int[] tIntoVals = new int[]{
+                1, 1, 1, 1, 1,
+                0, 0, 1, 0, 0,
+                0, 0, 1, 0, 0,
+                0, 0, 1, 0, 0,
+                0, 0, 1, 0, 0
+        };
+
+        Symbol[] symbols = new Symbol[]{
+                new Symbol(plusIntoVals, new int[]{0, 0, 1}, "PLUS"),
+                new Symbol(xIntoVals, new int[]{0, 1, 0}, "X"),
+                new Symbol(oIntoVals, new int[]{1, 0, 0}, "O"),
+                new Symbol(tIntoVals, new int[]{1, 1, 0}, "T")
+        };
 
         return symbols;
     }
@@ -83,7 +96,20 @@ public class Main {
                 1, 0, 0, 0, 0,
                 1, 1, 1, 1, 1
         };
-        Symbol[] symbols = new Symbol[]{new Symbol(plusSymbol, new int[]{0, 0, 1}, "PLUS_t"), new Symbol(xIntoVals, new int[]{0, 1, 0}, "X_t"), new Symbol(OintoVals, new int[]{1, 0, 0}, "O_t")};
+
+        int[] tIntoVals = new int[]{
+                1, 1, 1, 1, 1,
+                0, 0, 0, 0, 0,
+                0, 0, 1, 0, 0,
+                0, 0, 1, 0, 0,
+                0, 0, 1, 0, 0
+        };
+        Symbol[] symbols = new Symbol[]{
+                new Symbol(plusSymbol, new int[]{0, 0, 1}, "PLUS_t"),
+                new Symbol(xIntoVals, new int[]{0, 1, 0}, "X_t"),
+                new Symbol(OintoVals, new int[]{1, 0, 0}, "O_t"),
+                new Symbol(tIntoVals, new int[]{1, 1, 0}, "T_t")
+        };
 
         return symbols;
     }

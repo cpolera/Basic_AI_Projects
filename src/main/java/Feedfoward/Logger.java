@@ -43,7 +43,7 @@ public class Logger {
 
             writer.beginObject();
             String testingObjsS = gson.toJson(NETWORK.getTestingObjs());
-            writer.name("trainingObjs").value(testingObjsS);
+            writer.name("testingObjs").value(testingObjsS);
             writer.endObject();
         } catch (IOException e) {
             e.printStackTrace();
@@ -62,6 +62,8 @@ public class Logger {
             writer.name("learningRate").value(NETWORK.learningRate);
             writer.name("trainingCount").value(NETWORK.trainingCount);
             writer.name("testCount").value(NETWORK.testCount);
+            writer.name("hiddenNodeLayerSize").value(NETWORK.hiddenNeuronCount);
+            writer.name("hiddenNodeLayerCount").value(NETWORK.hiddenNeuronLayersCount);
             writer.endObject();
         } catch (IOException e) {
             e.printStackTrace();

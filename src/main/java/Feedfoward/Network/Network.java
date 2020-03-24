@@ -210,9 +210,6 @@ public class Network {
             for (NNObj testObj : objsToUse) {
                 //System.out.println(setValues.nnObj.desc);
                 testNetworkHelper(testObj);
-                //TODO THIS SHOULD BE A SEPARATE THING
-//                Logger.log();
-
             }
         }
 
@@ -258,7 +255,7 @@ public class Network {
                 node.calculateNodeOutput(false, true);
             }
         }
-        System.out.println(Arrays.toString(nnObj.getInputVals()));
+        System.out.println(nnObj.desc + " : " + Arrays.toString(nnObj.getInputVals()));
         boolean tester = true;
         for (Node outputNeuron : nodes[nodes.length - 1]) {
             if (outputNeuron instanceof OutputNeuron) {

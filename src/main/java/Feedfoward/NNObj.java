@@ -3,7 +3,6 @@ package Feedfoward;
 /**
  * NNObj is a generic neural network object that contains an array of input values, expected output values
  * Appears to store the originals in dVals and dVals_targets and uses SetValues as the location for updating values
- * //TODO should add double[2][] for the updated values and remove SetValues
  */
 public class NNObj {
 

@@ -60,7 +60,7 @@ public class Node {
 
         returnValue = nodeBiasCalc + sum;
         if (save) {
-            this.net = returnValue;//Update node net value. THIS IS NOT OUTPUT
+            this.net = returnValue;//Update node net value. THIS IS NOT OUTPUT//
         }
 
         return returnValue;
