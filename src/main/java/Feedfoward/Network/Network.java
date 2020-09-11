@@ -45,7 +45,6 @@ public class Network {
 
     private transient Random random = new Random();
 
-
     public Node[] getHiddenLayerNodes(int i){return nodes[i];}
 
     public Network() {
