@@ -66,9 +66,13 @@ public class Network {
         Logger.logInputs();
 
         if(run) {runNetworkTrainingAndTesting();}
+
     }
 
     public void runNetworkTrainingAndTesting() throws IOException {
+        Logger.startIterationArray();
+
+
         boolean endTesting = false;
         int testingCount = 0;
         while (!endTesting) {//Train/test until meets threshold
@@ -84,6 +88,7 @@ public class Network {
             passCountTotal += passCount;
             failCountTotal += failCount;
         }
+        Logger.endIterationArray();
     }
 
     public void predictOutput(NNObj[] objs) {

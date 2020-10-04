@@ -5,6 +5,7 @@ package Feedfoward;
  * Appears to store the originals in dVals and dVals_targets and uses SetValues as the location for updating values
  */
 public class NNObj {
+    static int incr = 0;
 
     public String desc;
     protected double[] dVals;//input values for a single set
@@ -13,6 +14,15 @@ public class NNObj {
     protected int id;
 
     public NNObj() {
+    }
+
+
+    public NNObj(double[] newVals, double[] targetVals, String desc) {
+        this.id = incr;
+        dVals = newVals;
+        dVals_targets = (targetVals);
+        incr++;
+        this.desc = desc;
     }
 
     public double[] getInputVals(){

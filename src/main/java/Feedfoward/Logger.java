@@ -11,16 +11,13 @@ public class Logger {
 
     private static Network NETWORK;
     private static JsonWriter writer;
-    private static String fileLocation = "src/main/logs/Log1.json";
 
-    public static void setFileLocation(String fileName, String fileLocation){
-        Logger.fileLocation = fileLocation + fileName + ".json";
-    }
+
 
     //TODO this is pretty problematic. cant change file location before initialized
     static {
         try {
-            writer = new JsonWriter( new FileWriter(fileLocation));
+            writer = new JsonWriter( new FileWriter(Manager.getFileLocation()));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -74,6 +71,14 @@ public class Logger {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        writer.endArray();
+    }
+
+    public static void startIterationArray() throws IOException {
+        writer.beginArray();
+    }
+
+    public static void endIterationArray() throws IOException {
         writer.endArray();
     }
 

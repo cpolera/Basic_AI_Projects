@@ -2,6 +2,7 @@ package Feedfoward.Network;
 
 import Feedfoward.Logger;
 import Feedfoward.Main;
+import Feedfoward.Manager;
 import Feedfoward.NNObj;
 
 import java.io.IOException;
@@ -33,7 +34,7 @@ public class MainRunner {
 
         //Create network and save output
         Network network = new Network();
-        Logger.setFileLocation(fileName, saveLocation);
+        Manager.setFileLocation(fileName, saveLocation);
         Logger logger = new Logger(network);
         NNObj[] trainingSet = Main.createSymbolList_EXAMPLE();
         NNObj[] testSymbols = Main.createTestSymbols();
